@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#przykladowe wywolanie
+#bash Lab4.bash Lab4_plik.txt folder P.Zelda
 if [ -e "$1" ]; then
   if [ ! -d "$2" ]; then
     mkdir "$2"
