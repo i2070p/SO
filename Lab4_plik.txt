@@ -1,0 +1,10 @@
+gr1;A.Nowak;
+gr1;J.Stalin;
+gr2;A.Hitler;
+gr2;A.Pinochet;
+gr3;M.Bros;
+gr3;P.Zelda;
+gr4;N.One;
+gr4;C.Johnson;
+gr5;J.Cutler;
+gr5;R.Coleman;
