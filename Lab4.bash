@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #przykladowe wywolanie:
-#bash Lab4.bash Lab4_plik.txt folder P.Zelda
+#bash Lab4.bash Lab4_plik.txt folder P.Zelda.txt
 
 #link do pliku testowego: https://github.com/i2070p/SO/blob/master/Lab4_plik.txt
 
