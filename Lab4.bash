@@ -1,7 +1,8 @@
 #!/bin/bash
 
-#przykladowe wywolanie
+#przykladowe wywolanie:
 #bash Lab4.bash Lab4_plik.txt folder P.Zelda
+
 #link do pliku testowego: https://github.com/i2070p/SO/blob/master/Lab4_plik.txt
 
 if [ -e "$1" ]; then
