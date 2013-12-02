@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #przykladowe wywolanie:
-#bash Lab4.bash Lab4_plik.txt folder P.Zelda.txt
+#bash Lab4.bash Lab4_plik.txt folder P.Zelda
 
 #link do pliku testowego: https://github.com/i2070p/SO/blob/master/Lab4_plik.txt
 
@@ -21,9 +21,8 @@ if [ -e "$1" ]; then
     if [ ! -d "$f_grupy" ]; then
       mkdir "$f_grupy"
     fi
-    touch "$2/$nazwa_grupy/$imie_nazwisko.txt"
-    
-    if [ "$imie_nazwisko" != "$3" ]; then
+    touch "$2/$nazwa_grupy/$imie_nazwisko"
+    if [ "$imie_nazwisko" = "$3" ]; then
        u_folder="$nazwa_grupy"
     fi
   done
@@ -35,7 +34,6 @@ if [ -e "$1" ]; then
   cd .. 
   chmod -x `ls`
   chmod +x "$u_folder"
-
 else 
   echo "Plik o podanej nazwie nie istnieje."
 fi
