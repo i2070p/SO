@@ -1,8 +1,7 @@
 #!/bin/bash
 
 function m_chmod {
-  ls "$1" | while read nazwa 
-  do
+  ls "$1" | while read nazwa; do
     chmod "$2" "$1/$nazwa"
   done
 }
