@@ -5,7 +5,7 @@
 
 #link do pliku testowego: https://github.com/i2070p/SO/blob/master/Lab4_plik.txt
 
-function m_chmod {
+function m_chmod { #parametry $1 - sciezka do katalogu, $2 - przelaczniki do chmod
   ls "$1" | while read nazwa 
   do
     chmod "$2" "$1/$nazwa"
