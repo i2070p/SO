@@ -5,6 +5,14 @@
 
 #link do pliku testowego: https://github.com/i2070p/SO/blob/master/Lab4_plik.txt
 
+function m_chmod {
+  ls "$1" | while read nazwa 
+  do
+    chmod "$2" "$1/$nazwa"
+  done
+}
+
+
 if [ -e "$1" ]; then
   if [ ! -d "$2" ]; then
     mkdir "$2"
@@ -13,7 +21,7 @@ if [ -e "$1" ]; then
   dlugosc_pliku=`cat "$1" | wc -l`
   for ((i=1; i<="$dlugosc_pliku"; i++)); do	
 
-    linia=`sed -n "$i"p "$1"`
+    linia=`head -"$i" "$1" | tail -1`
     nazwa_grupy=`echo "$linia" | cut -f1 -d";"`
     imie_nazwisko=`echo "$linia" | cut -f2 -d";"`
 
@@ -21,19 +29,17 @@ if [ -e "$1" ]; then
     if [ ! -d "$f_grupy" ]; then
       mkdir "$f_grupy"
     fi
-    touch "$2/$nazwa_grupy/$imie_nazwisko"
+    touch "$f_grupy/$imie_nazwisko"
     if [ "$imie_nazwisko" = "$3" ]; then
        u_folder="$nazwa_grupy"
     fi
   done
 
-  #najprostrze rozwiazanie jak ktos chce moze sie pobawic poleceniem - tr
-  cd "$2/$u_folder"  
-  chmod -w `ls`
-  chmod +w "$3"
-  cd .. 
-  chmod -x `ls`
-  chmod +x "$u_folder"
+  m_chmod "$2/$u_folder" "-w"  
+  chmod +w "$2/$u_folder/$3"
+  m_chmod "$2" "-x"  
+  chmod +x "$2/$u_folder"
+
 else 
   echo "Plik o podanej nazwie nie istnieje."
 fi
